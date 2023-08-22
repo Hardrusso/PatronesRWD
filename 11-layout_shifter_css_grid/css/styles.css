@@ -49,3 +49,46 @@ p {
 
 
 /** CODIGO AQUI **/
+@media (max-width: 768px) {
+    .sidebar{
+        background-color: orange;
+    }
+}
+
+@media (min-width: 768px) {
+    .layout-shifter{
+        display: grid;
+        grid-template-areas: "contenido"
+                             "inferior";
+    }   
+    .sidebar{
+        background-color: blue;
+        grid-area: inferior;
+    }
+    
+    .contenido-principal{
+        color: blue;
+        background-color: yellow;
+        grid-area: contenido;
+        display: grid;
+        grid-template-areas: "entrada1 entrada2";
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}
+@media (min-width: 992px ) {
+    .layout-shifter{
+        grid-template-areas: "contenido slidebar" ;
+        column-gap: 2rem;
+    }
+    .sidebar{
+        grid-area: slidebar;
+    }
+    .contenido-principal {
+        grid-area: contenido;
+        grid-template-areas: "entrada1" 
+                             "entrada2";
+        grid-template-columns: unset;
+    }
+
+}
